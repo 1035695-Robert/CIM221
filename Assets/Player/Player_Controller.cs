@@ -12,6 +12,9 @@ public class Player_Controller : MonoBehaviour
     
     public Action<bool> PickupAction;
     public Action<Vector2> MoveAction;
+    
+    
+    
 
     private void Awake()
     {
@@ -31,13 +34,15 @@ public class Player_Controller : MonoBehaviour
             MoveAction += playerView.Move;
             PickupAction += playerView.Pickup;
         }
+
+        Zone.isOnZone += zoneState => playerModel.isOnZone = zoneState;
     }
 
     private void Pickup(InputAction.CallbackContext obj)
     {
         if (!playerModel.isHolding)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 1f);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 1f, playerModel.layerMask);
             if (hit.collider != null)
             {
                 playerModel.holdObject = hit.collider.gameObject;
@@ -46,17 +51,21 @@ public class Player_Controller : MonoBehaviour
                 PickupAction?.Invoke(playerModel.isHolding);
             }
         }
-        else
+        else if (playerModel.isOnZone)
         {
-            playerModel.isHolding = false;
-            PickupAction?.Invoke(playerModel.isHolding);
-            playerModel.holdObject = null;
+            bool check = Zone.onDelivery?.Invoke(playerModel.holdObject) ?? false;
+            if (check)
+            {
+                playerModel.isHolding = false;
+                PickupAction?.Invoke(playerModel.isHolding);
+                playerModel.holdObject = null;
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = playerModel.moveValue * playerModel.moveSpeed;
+        rb.MovePosition(rb.position + playerModel.moveValue * (playerModel.moveSpeed *Time.fixedDeltaTime));
     }
 
     public void MovementInput(InputAction.CallbackContext obj)
@@ -68,8 +77,8 @@ public class Player_Controller : MonoBehaviour
 
     private void OnDisable()
     {
-        _controls.Player.Movement.performed += MovementInput;
-        _controls.Player.Movement.canceled += MovementInput;
+        _controls.Player.Movement.performed -= MovementInput;
+        _controls.Player.Movement.canceled -= MovementInput;
         _controls.Disable();
 
         if (playerView != null)

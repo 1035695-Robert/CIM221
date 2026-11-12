@@ -15,13 +15,13 @@ public class Player_View : MonoBehaviour
  public void Pickup(bool state)
  {  
   _animator.SetBool("isHolding", state);
-
-  if (state & model.holdObject != null)
+  
+  if (state && model.holdObject != null)
   {
-   model.holdObject.transform.SetParent(transform);
-   model.holdObject.transform.localPosition = Vector3.up;
+   model.holdObject.transform.parent =  transform;
+   model.holdObject.transform.position = transform.position + transform.up;
   }
-  else if (!state & model.holdObject != null)
+  else if (!state && model.holdObject != null)
   {
    model.holdObject.transform.SetParent(null);
   }
