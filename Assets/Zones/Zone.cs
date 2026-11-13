@@ -23,7 +23,7 @@ public class Zone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Interact" || other.tag == "Player")
         {
             isOnZone?.Invoke(true);
             Debug.Log("entered Zone");
@@ -32,7 +32,7 @@ public class Zone : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Interact" || other.tag == "Player")
         {
             isOnZone?.Invoke(false);
             Debug.Log("exited Zone");
@@ -58,6 +58,7 @@ public class Zone : MonoBehaviour
                     Debug.Log("Soil Nutrient");
                     return true;
                 }
+
                 return false;
         }
 
