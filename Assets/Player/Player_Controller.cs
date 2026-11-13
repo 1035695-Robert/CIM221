@@ -9,12 +9,10 @@ public class Player_Controller : MonoBehaviour
 
     [SerializeField] Player_Model playerModel;
     [SerializeField] Player_View playerView;
-    
+
     public Action<bool> PickupAction;
     public Action<Vector2> MoveAction;
-    
-    
-    
+
 
     private void Awake()
     {
@@ -34,8 +32,6 @@ public class Player_Controller : MonoBehaviour
             MoveAction += playerView.Move;
             PickupAction += playerView.Pickup;
         }
-
-        Zone.isOnZone += zoneState => playerModel.isOnZone = zoneState;
     }
 
     private void Pickup(InputAction.CallbackContext obj)
@@ -47,14 +43,13 @@ public class Player_Controller : MonoBehaviour
             {
                 playerModel.holdObject = hit.collider.gameObject;
                 playerModel.isHolding = true;
-                
+
                 PickupAction?.Invoke(playerModel.isHolding);
             }
         }
         else if (playerModel.isOnZone)
         {
-            bool check = Zone.onDelivery?.Invoke(playerModel.holdObject) ?? false;
-            if (check)
+            if (playerModel.currentZone.DeliveredItem(playerModel.holdObject))
             {
                 playerModel.isHolding = false;
                 PickupAction?.Invoke(playerModel.isHolding);
@@ -65,7 +60,7 @@ public class Player_Controller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + playerModel.moveValue * (playerModel.moveSpeed *Time.fixedDeltaTime));
+        rb.MovePosition(rb.position + playerModel.moveValue * (playerModel.moveSpeed * Time.fixedDeltaTime));
     }
 
     public void MovementInput(InputAction.CallbackContext obj)

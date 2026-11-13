@@ -13,8 +13,8 @@ public class Player_Model : MonoBehaviour
     [Header("Pickup")] 
     public GameObject holdObject { get; set; }
     public bool isHolding { get; set; }
-    public bool isOnZone { get; set; }
-
+    public Zone currentZone { get; set; }
+    public bool isOnZone => currentZone != null;
     [SerializeField] private LayerMask _mask;
     public LayerMask layerMask
     {

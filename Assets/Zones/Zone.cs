@@ -11,7 +11,6 @@ public enum ZoneType
 
 public class Zone : MonoBehaviour
 {
-    public static Action<bool> isOnZone;
     public static Func<GameObject, bool> onDelivery;
     [SerializeField] private ZoneType zoneType;
 
@@ -23,24 +22,25 @@ public class Zone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.TryGetComponent(out Player_Model model))
         {
-            isOnZone?.Invoke(true);
+            model.currentZone = this;
             Debug.Log("entered Zone");
         }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.TryGetComponent(out Player_Model model) && model.currentZone == this)
         {
-            isOnZone?.Invoke(false);
+            model.currentZone = null;
             Debug.Log("exited Zone");
         }
     }
 
-    private bool DeliveredItem(GameObject nutrients)
+    public bool DeliveredItem(GameObject nutrients)
     {
+        Debug.Log("Delivered Item?");
         NutrientsType type = nutrients.GetComponent<Nutrients>().nutrientsType;
         switch (type)
         {
@@ -50,8 +50,8 @@ public class Zone : MonoBehaviour
                     Debug.Log("Host Nutrient");
                     return true;
                 }
-
                 return false;
+            
             case NutrientsType.SoilNutrient:
                 if (zoneType == ZoneType.RootZone)
                 {
