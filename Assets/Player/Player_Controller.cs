@@ -25,7 +25,8 @@ public class Player_Controller : MonoBehaviour
         _controls.Player.Movement.performed += MovementInput;
         _controls.Player.Movement.canceled += MovementInput;
         _controls.Player.Pickup.performed += Pickup;
-        _controls.Enable();
+        _controls.UI.Close.performed += CloseUI;
+        _controls.Player.Enable();
 
         if (playerView != null)
         {
@@ -33,6 +34,9 @@ public class Player_Controller : MonoBehaviour
             PickupAction += playerView.Pickup;
         }
     }
+
+   
+
 
     private void Pickup(InputAction.CallbackContext obj)
     {
@@ -42,6 +46,7 @@ public class Player_Controller : MonoBehaviour
             if (hit.collider != null)
             {
                 playerModel.holdObject = hit.collider.gameObject;
+               if (UIPopupManager.instance.OpenUI(playerModel.holdObject.name)) SwitchtoUI();
                 playerModel.isHolding = true;
 
                 PickupAction?.Invoke(playerModel.isHolding);
@@ -56,6 +61,19 @@ public class Player_Controller : MonoBehaviour
                 playerModel.holdObject = null;
             }
         }
+    }
+
+    public  void SwitchtoUI()
+    {
+        Debug.Log("Switch to UI");
+       _controls.Player.Disable();
+       _controls.UI.Enable();
+    }
+    private void CloseUI(InputAction.CallbackContext obj)
+    {
+        UIPopupManager.instance.CloseUi();
+        _controls.Player.Enable();
+        _controls.UI.Disable();
     }
 
     private void FixedUpdate()
@@ -74,6 +92,8 @@ public class Player_Controller : MonoBehaviour
     {
         _controls.Player.Movement.performed -= MovementInput;
         _controls.Player.Movement.canceled -= MovementInput;
+        _controls.Player.Pickup.performed -= Pickup;
+
         _controls.Disable();
 
         if (playerView != null)

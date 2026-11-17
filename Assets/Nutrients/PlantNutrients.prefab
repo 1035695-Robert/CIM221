@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3929896688422340572}
   - component: {fileID: 3183392757003163737}
   m_Layer: 3
-  m_Name: Circle
+  m_Name: PlantNutrients
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,4 +147,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2feddc4ef909e429844b9587a43d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nutrientsType: 1
+  type: 1

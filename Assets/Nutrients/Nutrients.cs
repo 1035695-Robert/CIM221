@@ -3,10 +3,11 @@ using UnityEngine;
 public enum NutrientsType
 {
     SoilNutrient,
-    HostPlantNutrient,
+    PlantNutrient,
 }
 
 public class Nutrients : MonoBehaviour
 {
-    public NutrientsType nutrientsType;
+    [SerializeField] private NutrientsType type;
+    public NutrientsType Type => type;
 }
