@@ -26,24 +26,26 @@ public class NutrientsPool : MonoBehaviour
       for (int i = 0; i < poolSize; i++)
       {
         GameObject nutrient = Instantiate(nutrientObj);
+        nutrient.name = nutrientObj.name.Replace("(Clone)", "");
+        nutrient.name = nutrient.name.TrimEnd();
         nutrient.SetActive(false);
         nutrientsPool.Add(nutrient);
       }
     }
   }
- 
-  
 
-  public GameObject GetPooledNutrient()
+  public GameObject spawnNutrient(Vector2 spawnPos, string nutrientName)
   {
-    foreach ( var nutrient in  nutrientsPool)
+    foreach (GameObject nutrient in nutrientsPool)
     {
-      if (!nutrient.activeInHierarchy)
-      {
-        return nutrient;
-      }
+      if(nutrient.name == nutrientName) continue;
+      if(nutrient.activeInHierarchy) continue;
+      
+      nutrient.transform.position = spawnPos;
+      nutrient.SetActive(true);
+      return nutrient;
     }
-
     return null;
   }
+  
 }

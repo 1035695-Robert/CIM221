@@ -56,9 +56,12 @@ public class Player_Controller : MonoBehaviour
         {
             if (playerModel.currentZone.DeliveredItem(playerModel.holdObject))
             {
-                playerModel.isHolding = false;
-                PickupAction?.Invoke(playerModel.isHolding);
+                
+                PickupAction?.Invoke(playerModel.isHolding = false);
+                playerModel.holdObject.SetActive(false);
+                NutrientsPool.instance.spawnNutrient(playerModel.currentZone.transform.position, playerModel.holdObject.name);
                 playerModel.holdObject = null;
+                
             }
         }
     }
