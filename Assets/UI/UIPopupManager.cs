@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -30,36 +31,43 @@ public class UIPopupManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    UICheckManager uiCheck = new UICheckManager();
-    [SerializeField] private Transform uiCanvas;
-    [SerializeField] private GameObject[] uiObjects;
+    private readonly UICheckManager _uiCheck = new UICheckManager();
+    [SerializeField] private GameObject popupUI;
+
+    [SerializeField] private GameObject[] uiData;
+
+    [SerializeField] private TextMeshProUGUI titleText;
+    [SerializeField] private TextMeshProUGUI descriptionText;
 
     private void Start()
-    {
-        uiObjects = new GameObject[uiCanvas.childCount];
-        for (int i = 0; i < uiCanvas.childCount; i++)
+    { 
+        uiData = new GameObject[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
         {
-            uiObjects[i] = uiCanvas.GetChild(i).gameObject;
+            uiData[i] = transform.GetChild(i).gameObject;
         }
     }
 
-    private GameObject targetUi;
+    private UIPopupData targetData;
 
     public bool OpenUI(string uiName)
     {
         if (CheckList(uiName)) return false;
 
         Debug.Log(uiName);
-        targetUi = uiObjects.FirstOrDefault(ui => ui != null && ui.name == uiName + " UI");
+        GameObject targetObject = uiData.FirstOrDefault(ui => ui != null && ui.name == uiName);
 
-        if (targetUi != null)
+        if (targetObject != null)
         {
-            Debug.Log(targetUi.name);
-            targetUi.SetActive(true);
+            targetData = targetObject.GetComponent<UIPopupData>();
+            titleText.text = targetData.Title;
+            descriptionText.text = targetData.Description;
+            popupUI.SetActive(true);
+            AudioManager.instance.OnAudioEvent?.Invoke("UI Menu Select");
             MarkAsOpened(uiName);
             return true;
         }
-
+        Debug.LogError("something went wrong");
         return false;
     }
 
@@ -69,23 +77,23 @@ public class UIPopupManager : MonoBehaviour
         switch (uiName)
         {
             case "PlantNutrients":
-                return uiCheck.IsPickupPlantNutrients;
+                return _uiCheck.IsPickupPlantNutrients;
 
             case "SoilNutrients":
-                return uiCheck.isPickupSoilNutrients;
+                return _uiCheck.isPickupSoilNutrients;
 
             case "RootZone":
-                Debug.Log(uiCheck.IsInRootZone);
-                return uiCheck.IsInRootZone;
+                Debug.Log(_uiCheck.IsInRootZone);
+                return _uiCheck.IsInRootZone;
 
             case "FungalZone":
-                return uiCheck.IsInFungalHub;
+                return _uiCheck.IsInFungalHub;
 
             case "PollutionHazard":
-                return uiCheck.IsNearPollutionHazard;
+                return _uiCheck.IsNearPollutionHazard;
 
             case "SoilHazard":
-                return uiCheck.IsNearSoilHazard;
+                return _uiCheck.IsNearSoilHazard;
 
             default:
                 return false;
@@ -97,33 +105,34 @@ public class UIPopupManager : MonoBehaviour
         switch (uiName)
         {
             case "PlantNutrients":
-                uiCheck.IsPickupPlantNutrients = true;
+                _uiCheck.IsPickupPlantNutrients = true;
                 break;
 
             case "SoilNutrients":
-                uiCheck.isPickupSoilNutrients = true;
+                _uiCheck.isPickupSoilNutrients = true;
                 break;
 
             case "RootZone":
-                uiCheck.IsInRootZone = true;
+                _uiCheck.IsInRootZone = true;
                 break;
 
             case "FungalZone":
-                uiCheck.IsInFungalHub = true;
+                _uiCheck.IsInFungalHub = true;
                 break;
 
             case "PollutionHazard":
-                uiCheck.IsNearPollutionHazard = true;
+                _uiCheck.IsNearPollutionHazard = true;
                 break;
 
             case "SoilHazard":
-                uiCheck.IsNearSoilHazard = true;
+                _uiCheck.IsNearSoilHazard = true;
                 break;
         }
     }
 
     public void CloseUi()
     {
-        targetUi.SetActive(false);
+        popupUI.SetActive(false);
+        AudioManager.instance.OnAudioEvent?.Invoke("UI Menu Exit");
     }
 }

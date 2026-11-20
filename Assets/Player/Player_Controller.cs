@@ -48,7 +48,7 @@ public class Player_Controller : MonoBehaviour
                 playerModel.holdObject = hit.collider.gameObject;
                if (UIPopupManager.instance.OpenUI(playerModel.holdObject.name)) SwitchtoUI();
                 playerModel.isHolding = true;
-
+                
                 PickupAction?.Invoke(playerModel.isHolding);
             }
         }
