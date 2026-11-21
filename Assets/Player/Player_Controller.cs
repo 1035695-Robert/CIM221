@@ -11,8 +11,9 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] Player_Model playerModel;
     [SerializeField] Player_View playerView;
 
-    public Action<bool> PickupAction;
-    public Action<Vector2> MoveAction;
+    private Action<bool> PickupAction;
+    private Action<Vector2> MoveActionPerformed;
+    private Action<Vector2> _moveActionCanceled;
 
 
     private void Awake()
@@ -31,7 +32,8 @@ public class Player_Controller : MonoBehaviour
 
         if (playerView != null)
         {
-            MoveAction += playerView.Move;
+            _moveActionCanceled += playerView.StopMove;
+            MoveActionPerformed += playerView.Move;
             PickupAction += playerView.Pickup;
         }
     }
@@ -87,8 +89,13 @@ public class Player_Controller : MonoBehaviour
 
     public void MovementInput(InputAction.CallbackContext obj)
     {
+        if (obj.canceled)
+        {
+            _moveActionCanceled?.Invoke(playerModel.moveValue);
+        }
+
         playerModel.moveValue = obj.ReadValue<Vector2>();
-        MoveAction?.Invoke(playerModel.moveValue);
+        MoveActionPerformed?.Invoke(playerModel.moveValue);
     }
 
 
@@ -102,7 +109,7 @@ public class Player_Controller : MonoBehaviour
 
         if (playerView != null)
         {
-            MoveAction -= playerView.Move;
+            MoveActionPerformed -= playerView.Move;
             PickupAction -= playerView.Pickup;
         }
     }
