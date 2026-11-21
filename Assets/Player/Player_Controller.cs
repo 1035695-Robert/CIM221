@@ -1,4 +1,5 @@
 using System;
+using Audio.Scripts;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -46,7 +47,7 @@ public class Player_Controller : MonoBehaviour
             if (hit.collider != null)
             {
                 playerModel.holdObject = hit.collider.gameObject;
-               if (UIPopupManager.instance.OpenUI(playerModel.holdObject.name)) SwitchtoUI();
+               if (UIPopupManager.Instance.OpenUI(playerModel.holdObject.name)) SwitchtoUI();
                 playerModel.isHolding = true;
                 
                 PickupAction?.Invoke(playerModel.isHolding);
@@ -56,8 +57,8 @@ public class Player_Controller : MonoBehaviour
         {
             if (playerModel.currentZone.DeliveredItem(playerModel.holdObject))
             {
-                
                 PickupAction?.Invoke(playerModel.isHolding = false);
+                PlayerAudio.OnPlayerAudioEvent?.Invoke("happy");
                 playerModel.holdObject.SetActive(false);
                 NutrientsPool.instance.spawnNutrient(playerModel.currentZone.transform.position, playerModel.holdObject.name);
                 playerModel.holdObject = null;
@@ -74,7 +75,7 @@ public class Player_Controller : MonoBehaviour
     }
     private void CloseUI(InputAction.CallbackContext obj)
     {
-        UIPopupManager.instance.CloseUi();
+        UIPopupManager.Instance.CloseUi();
         _controls.Player.Enable();
         _controls.UI.Disable();
     }

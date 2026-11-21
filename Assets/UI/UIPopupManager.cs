@@ -1,8 +1,7 @@
-using System;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
+using Audio.Scripts;
 
 
 public class UICheckManager
@@ -17,17 +16,17 @@ public class UICheckManager
 
 public class UIPopupManager : MonoBehaviour
 {
-    public static UIPopupManager instance;
+    public static UIPopupManager Instance;
 
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
 
-        instance = this;
+        Instance = this;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -63,7 +62,9 @@ public class UIPopupManager : MonoBehaviour
             titleText.text = targetData.Title;
             descriptionText.text = targetData.Description;
             popupUI.SetActive(true);
-            AudioManager.instance.OnAudioEvent?.Invoke("UI Menu Select");
+            
+            UiAudio.OnUIAudioEvent?.Invoke("UI Menu Select");
+            
             MarkAsOpened(uiName);
             return true;
         }
@@ -133,6 +134,6 @@ public class UIPopupManager : MonoBehaviour
     public void CloseUi()
     {
         popupUI.SetActive(false);
-        AudioManager.instance.OnAudioEvent?.Invoke("UI Menu Exit");
+       UiAudio.OnUIAudioEvent?.Invoke("UI Menu Exit");
     }
 }

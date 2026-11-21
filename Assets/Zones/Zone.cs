@@ -24,7 +24,6 @@ public class Zone : MonoBehaviour
     {
         if (other.TryGetComponent(out Player_Model model))
             model.currentZone = this;
-        
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -61,6 +60,7 @@ public class Zone : MonoBehaviour
 
                 return false;
         }
+
         return false;
     }
 }
