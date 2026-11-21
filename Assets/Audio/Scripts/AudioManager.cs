@@ -3,8 +3,9 @@ using UnityEngine;
 
 public abstract class AudioManager : MonoBehaviour
 {
+    
     public AudioSource Audio;
-    [SerializeField] private AudioClip[] _audioClips;
+    [SerializeField] protected AudioClip[] _audioClips;
 
     protected virtual void Awake()
     {

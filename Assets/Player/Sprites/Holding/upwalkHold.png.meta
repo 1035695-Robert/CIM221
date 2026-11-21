@@ -151,34 +151,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New Piskel (2) (2)_0
+      name: upwalkHold_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 31
-        width: 14
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab091f5073e05a270800000000000000
-      internalID: 8261024720966750394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: New Piskel (2) (2)_1
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 15
-        width: 14
+        x: 0
+        y: 32
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -186,43 +164,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fa49075f4cb673f30800000000000000
-      internalID: 4555228041784104111
+      spriteID: cd36306b6b3681840a6f9aa67652d985
+      internalID: 1513373357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2) (2)_2
+      name: upwalkHold_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 15
-        width: 14
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0abcfea909152fb10800000000000000
-      internalID: 2013761664904580000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: New Piskel (2) (2)_3
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 0
-        width: 14
+        x: 16
+        y: 32
+        width: 16
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -230,32 +186,98 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7798da1a68123aed0800000000000000
-      internalID: -2404040913963873929
+      spriteID: 7533afa0370aaa241a45fa5e56ea70f7
+      internalID: -1821894496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2) (2)_4
+      name: upwalkHold_2
       rect:
         serializedVersion: 2
-        x: 17
-        y: 0
-        width: 14
-        height: 15
+        x: 0
+        y: 16
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4f57a60bdfd4f0cf0800000000000000
-      internalID: -283922499519220236
+      spriteID: 36d6d1b81ee4df14eb433f16b9a764ee
+      internalID: -2065772597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upwalkHold_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db29296c35d31bd4daaf319bef8af503
+      internalID: 737727197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upwalkHold_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c86c59cf188c004c8389c7703bcd248
+      internalID: -1734269085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: upwalkHold_5
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8130386b100fbc5419933fc5a7d65afb
+      internalID: -685580770
       vertices: []
       indices: 
       edges: []
@@ -264,7 +286,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 4184b2a78af69274188d3613de699fca
     internalID: 0
     vertices: []
     indices: 
@@ -274,11 +296,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      New Piskel (2) (2)_0: 8261024720966750394
-      New Piskel (2) (2)_1: 4555228041784104111
-      New Piskel (2) (2)_2: 2013761664904580000
-      New Piskel (2) (2)_3: -2404040913963873929
-      New Piskel (2) (2)_4: -283922499519220236
+      upwalkHold_0: 1513373357
+      upwalkHold_1: -1821894496
+      upwalkHold_2: -2065772597
+      upwalkHold_3: 737727197
+      upwalkHold_4: -1734269085
+      upwalkHold_5: -685580770
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

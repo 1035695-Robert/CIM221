@@ -9,7 +9,7 @@ public class Player_View : MonoBehaviour
     public void Move(Vector2 moveValue)
     {
         if (moveValue.x != 0 || moveValue.y != 0)
-            _animator.SetBool("isMoving", true);
+            _animator.SetBool("isMoving", moveValue != Vector2.zero);
 
         _animator.SetFloat("moveX", moveValue.x);
         _animator.SetFloat("moveY", moveValue.y);
