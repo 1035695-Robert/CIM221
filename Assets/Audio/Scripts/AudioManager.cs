@@ -17,6 +17,7 @@ public abstract class AudioManager : MonoBehaviour
     public virtual void PlayAudio(string clipName)
     {
         AudioClip target = Array.Find(_audioClips, sound => sound.name == clipName);
+        if (target == null) return;
         Audio.PlayOneShot(target);
     }
 

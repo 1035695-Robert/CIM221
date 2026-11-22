@@ -14,7 +14,7 @@ public class Player_Controller : MonoBehaviour
     private Action<bool> PickupAction;
     private Action<Vector2> MoveActionPerformed;
     private Action<Vector2> _moveActionCanceled;
-
+    public static Action _inHazardZone;
 
     private void Awake()
     {
@@ -36,6 +36,7 @@ public class Player_Controller : MonoBehaviour
             MoveActionPerformed += playerView.Move;
             PickupAction += playerView.Pickup;
         }
+        
     }
 
 

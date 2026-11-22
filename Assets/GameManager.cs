@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
             Debug.Log($"Loading: {op.progress:P0}");
             yield return null;
         }
-        Music.OnMusicAudioEvent?.Invoke("ChiptuneGameplay1");
+        Music.OnMusicAudioEvent?.Invoke("Base");
         //display instructions
     }
 }
