@@ -321,8 +321,8 @@ Transform:
   m_GameObject: {fileID: 216538008}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.76, y: 2.41, z: 0.017252447}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: 19.58, y: -4.58, z: 0.017252447}
+  m_LocalScale: {x: 6.5, y: 6.5, z: 1.625}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 642936745}
@@ -1081,8 +1081,8 @@ Transform:
   m_GameObject: {fileID: 711258012}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.76, y: 2.41, z: 0.017252447}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: 11.53, y: -4.62, z: 0.017252447}
+  m_LocalScale: {x: 6.5, y: 6.5, z: 1.625}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1590452789}
@@ -1532,8 +1532,8 @@ Transform:
   m_GameObject: {fileID: 1487022243}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.95, y: -4.83, z: 0.017252447}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalPosition: {x: 2.07, y: -4.68, z: 0.017252447}
+  m_LocalScale: {x: 7.6552, y: 7.4228, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2122049292}
@@ -2340,11 +2340,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 225214611534898822, guid: 98a14824875ad384ab1fc7776809353f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.63
+      value: 1.68
       objectReference: {fileID: 0}
     - target: {fileID: 225214611534898822, guid: 98a14824875ad384ab1fc7776809353f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.2
+      value: -1.43
       objectReference: {fileID: 0}
     - target: {fileID: 225214611534898822, guid: 98a14824875ad384ab1fc7776809353f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2376,6 +2376,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 225214611534898822, guid: 98a14824875ad384ab1fc7776809353f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385193937107299226, guid: 98a14824875ad384ab1fc7776809353f, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8436932887278267952, guid: 98a14824875ad384ab1fc7776809353f, type: 3}
+      propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9165763677794165103, guid: 98a14824875ad384ab1fc7776809353f, type: 3}

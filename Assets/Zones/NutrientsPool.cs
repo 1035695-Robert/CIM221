@@ -34,7 +34,7 @@ public class NutrientsPool : MonoBehaviour
     }
   }
 
-  public GameObject spawnNutrient(Vector2 spawnPos, string nutrientName)
+  public GameObject SpawnNutrient(Vector2 spawnPos, string nutrientName)
   {
     foreach (GameObject nutrient in nutrientsPool)
     {

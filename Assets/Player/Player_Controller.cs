@@ -36,9 +36,12 @@ public class Player_Controller : MonoBehaviour
             MoveActionPerformed += playerView.Move;
             PickupAction += playerView.Pickup;
         }
-        
     }
 
+    public void HurtCycle()
+    {
+        playerView.HurtAnim();
+    }
 
     private void Pickup(InputAction.CallbackContext obj)
     {
@@ -68,7 +71,7 @@ public class Player_Controller : MonoBehaviour
                 PickupAction?.Invoke(playerModel.isHolding = false);
                 PlayerAudio.OnPlayerAudioEvent?.Invoke("happy");
                 playerModel.holdObject.SetActive(false);
-                NutrientsPool.instance.spawnNutrient(playerModel.currentZone.transform.position,
+                NutrientsPool.instance.SpawnNutrient(playerModel.currentZone.transform.position,
                     playerModel.holdObject.name);
                 playerModel.holdObject = null;
             }

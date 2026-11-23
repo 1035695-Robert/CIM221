@@ -38,14 +38,16 @@ public class Hazards : MonoBehaviour
             model.ResetMoveSpeed();
             Music.OnMusicAudioEvent?.Invoke("Base");
         }
+        isInDanger = false;
     }
 
-    private IEnumerator Hurt()
+    private IEnumerator Hurt(Player_Controller controller)
     {
         isInDanger = true;
         while (isInDanger)
         {
             PlayerAudio.OnPlayerAudioEvent?.Invoke("hurt");
+            controller.HurtCycle();
             yield return new WaitForSeconds(2f);
         }
 
@@ -54,13 +56,16 @@ public class Hazards : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        StartCoroutine(Hurt());
+        if (other.gameObject.TryGetComponent(out Player_Controller controller))
+        {
+            StartCoroutine(Hurt(controller));
+        }
     }
 
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        isInDanger = false;
-    }
+    // private void OnCollisionExit2D(Collision2D other)
+    // {
+    //     isInDanger = false;
+    // }
 
     private void ClearHazards(string obj)
     {

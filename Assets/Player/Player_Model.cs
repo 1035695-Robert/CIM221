@@ -21,7 +21,24 @@ public class Player_Model : MonoBehaviour
     public Vector2 lastMoveValue { get; set; }
     public GameObject holdObject { get; set; }
     public bool isHolding { get; set; }
-    public Zone currentZone { get; set; }
+
+    private Zone _currentZone;
+    public Zone currentZone
+    {
+        get => _currentZone;
+        set
+        {
+            _currentZone = value;
+            if(value == null && _currentZone != null)
+            {
+                lastZone = _currentZone;
+            }
+            _currentZone = value;
+        }
+        
+    }
+
+    public Zone lastZone { get; set; }
     public bool isOnZone => currentZone != null;
     [SerializeField] private LayerMask _mask;
     public LayerMask layerMask

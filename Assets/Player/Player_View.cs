@@ -18,17 +18,8 @@ public class Player_View : MonoBehaviour
 
     public void Pickup(bool state)
     {
-        Nutrients nutrients = model.holdObject.GetComponent<Nutrients>();
-        switch (nutrients.Type)
-        {
-            case NutrientsType.PlantNutrient:
-                _animator.SetBool("isPlantHold", state);
-                break;
-                case NutrientsType.SoilNutrient:
-                    _animator.SetBool("isSoilHold", state);
-                    break;
-        }
-        
+        CheckNutrients(state);
+
         if (state && model.holdObject != null)
         {
             model.holdObject.transform.parent = transform;
@@ -43,10 +34,29 @@ public class Player_View : MonoBehaviour
         }
     }
 
+    private void CheckNutrients(bool state)
+    {
+        Nutrients nutrients = model.holdObject.GetComponent<Nutrients>();
+        switch (nutrients.Type)
+        {
+            case NutrientsType.PlantNutrient:
+                _animator.SetBool("isPlantHold", state);
+                break;
+            case NutrientsType.SoilNutrient:
+                _animator.SetBool("isSoilHold", state);
+                break;
+        }
+    }
+
     public void StopMove(Vector2 moveValue)
     {
         _animator.SetBool("isMoving", false);
         _animator.SetFloat("lastX", moveValue.x);
         _animator.SetFloat("lastY", moveValue.y);
+    }
+
+    public void HurtAnim()
+    {
+        _animator.SetTrigger("isHurt");
     }
 }
