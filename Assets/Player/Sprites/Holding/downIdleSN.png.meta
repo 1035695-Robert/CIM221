@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 3abaf873ca5a7fa4988becd66533e7fe
+guid: bc910ddde800c0444aff00e1a54320bc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3763752930381237044
-    second: New Piskel (2)_0
+      213: 8987154507766728348
+    second: downIdleSN 1_0
   - first:
-      213: -445332791505162358
-    second: New Piskel (2)_1
+      213: 3858843026773060968
+    second: downIdleSN 1_1
   - first:
-      213: 109718205546589128
-    second: New Piskel (2)_2
+      213: 7641572579806717020
+    second: downIdleSN 1_2
   - first:
-      213: -8637498362619983186
-    second: New Piskel (2)_3
+      213: -3684348774823613569
+    second: downIdleSN 1_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -148,7 +148,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: New Piskel (2)_0
+      name: downIdleSN_0
       rect:
         serializedVersion: 2
         x: 0
@@ -161,16 +161,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 43b85b559598b3430800000000000000
-      internalID: 3763752930381237044
+      spriteID: 4118d0b511b0b8b47acbe9958e76459a
+      internalID: 960014678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2)_1
+      name: downIdleSN_1
       rect:
         serializedVersion: 2
         x: 16
@@ -183,16 +183,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a8f60838f2cd1d9f0800000000000000
-      internalID: -445332791505162358
+      spriteID: f9abe172b20ff2146b6d86ab6b67063f
+      internalID: 1223847584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2)_2
+      name: downIdleSN_2
       rect:
         serializedVersion: 2
         x: 0
@@ -207,14 +207,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6c0d2b56c22cf74e82a5bdcca4818da
-      internalID: 1345763699
+      spriteID: 041992ae967b40c4fbbf7f66adc46e5d
+      internalID: -1470172424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: New Piskel (2)_3
+      name: downIdleSN_3
       rect:
         serializedVersion: 2
         x: 16
@@ -229,8 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d074239482971349b79191bb302dc08
-      internalID: 1680698772
+      spriteID: c405365aa5fea22499bed518f3389a70
+      internalID: 1923357652
       vertices: []
       indices: 
       edges: []
@@ -239,7 +239,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7961e7fdb636e8a4381e3ffcf7420ac3
+    spriteID: 3ffe0b8924dc1824082c80908013df59
     internalID: 0
     vertices: []
     indices: 
@@ -249,10 +249,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      New Piskel (2)_0: 3763752930381237044
-      New Piskel (2)_1: -445332791505162358
-      New Piskel (2)_2: 1345763699
-      New Piskel (2)_3: 1680698772
+      downIdleSN_0: 960014678
+      downIdleSN_1: 1223847584
+      downIdleSN_2: -1470172424
+      downIdleSN_3: 1923357652
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

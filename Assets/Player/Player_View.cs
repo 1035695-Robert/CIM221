@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Audio.Scripts;
 
 public class Player_View : MonoBehaviour
 {
@@ -17,15 +18,27 @@ public class Player_View : MonoBehaviour
 
     public void Pickup(bool state)
     {
-        _animator.SetBool("isHolding", state);
-
+        Nutrients nutrients = model.holdObject.GetComponent<Nutrients>();
+        switch (nutrients.Type)
+        {
+            case NutrientsType.PlantNutrient:
+                _animator.SetBool("isPlantHold", state);
+                break;
+                case NutrientsType.SoilNutrient:
+                    _animator.SetBool("isSoilHold", state);
+                    break;
+        }
+        
         if (state && model.holdObject != null)
         {
             model.holdObject.transform.parent = transform;
-            model.holdObject.transform.position = transform.position + transform.up;
+            model.holdObject.transform.position = transform.position;
+            model.holdObject.SetActive(false);
+            Sfx.OnSfxAudioEvent?.Invoke("pickup");
         }
         else if (!state && model.holdObject != null)
         {
+            Sfx.OnSfxAudioEvent?.Invoke("drop");
             model.holdObject.transform.SetParent(null);
         }
     }

@@ -6,7 +6,8 @@ public enum ZoneType
 {
     None,
     RootZone,
-    FungalZone
+    FungalZone,
+    PollutionHazard
 }
 
 

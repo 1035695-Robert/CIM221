@@ -96,6 +96,7 @@ public class UIPopupManager : MonoBehaviour
             case "SoilHazard":
                 return _uiCheck.IsNearSoilHazard;
 
+            
             default:
                 return false;
         }

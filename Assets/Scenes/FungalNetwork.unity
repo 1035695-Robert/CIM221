@@ -119,6 +119,64 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &58215236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 58215237}
+  - component: {fileID: 58215238}
+  m_Layer: 5
+  m_Name: PollutionHazard
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &58215237
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58215236}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 90.12211}
+  m_LocalScale: {x: 0.009784703, y: 0.009784703, z: 0.009784703}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 967984806}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.294858, y: 0.023979753}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &58215238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58215236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b68d088337be894da65f9baee4ed35d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: Pollution
+  description: ' The invasion of substances that contaminant and poison the environment.
+    Sources of pollution include light, metals, plastic, acid rain, and carbon clouds,
+    otherwise known as air pollution, to name a few.
+
+
+    <align="center">Pollution
+    is harmful to the ecosystem. Deliver nutrients to combat this threat.</align>
+
+'
 --- !u!1 &124807520
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +533,9 @@ MonoBehaviour:
     dioxide, water, and sunlight facilitate the production of glucose, a sugar that
     feeds the fungal network. I like to have 2 tbsp of glucose in my tea.
 
-'
+
+    <align="center">Deliver
+    the glucose to the fungal network to feed it.</align>'
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +668,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1711428, y: 0.3977312, z: -10}
+  m_LocalPosition: {x: -3.7, y: -1.2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -698,7 +758,8 @@ MonoBehaviour:
   description: "The unsung hero of an ecosystem, it lives in the soil with threads
     intertwining with the roots, which allow plants to transfer water and minerals,
     which is known as the mycorrhizal network... mycorrhiza network\n [or however
-    you say it]\r\n"
+    you say it]\r\n\n<align=\"center\">This is the main hub where you will obtain
+    nutrients in order to deliver them.</align>"
 --- !u!4 &580478983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3111686932276591355, guid: f4ea082f33d25554683eb5e5338109cf, type: 3}
@@ -933,9 +994,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Soil Nutrients
-  description: Essential elements for plant growth and development. These elements
+  description: 'Essential elements for plant growth and development. These elements
     include phosphorus, nitrogen, iron, and sulfur, although the soil needs more
     protein in order to grow muscles.
+
+
+    <align="center">Deliver these nutrients
+    to the plants to restore them.</align>'
 --- !u!1 &709495576 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3175917592563826557, guid: f4ea082f33d25554683eb5e5338109cf, type: 3}
@@ -1001,7 +1066,7 @@ GameObject:
   - component: {fileID: 711258015}
   - component: {fileID: 711258014}
   m_Layer: 0
-  m_Name: Test Zone (2)
+  m_Name: Hazard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1016,7 +1081,7 @@ Transform:
   m_GameObject: {fileID: 711258012}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.79, y: -7.77, z: 0.017252447}
+  m_LocalPosition: {x: 3.76, y: 2.41, z: 0.017252447}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1231,6 +1296,7 @@ Transform:
   - {fileID: 686115215}
   - {fileID: 519267924}
   - {fileID: 573582243}
+  - {fileID: 58215237}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1043610172 stripped
@@ -1296,7 +1362,9 @@ MonoBehaviour:
     roots, whilst also anchoring the plant. Roots must be shampooed, whereas the
     ends should be conditioned.
 
-'
+
+    <align="center">Traverse the roots and fungal
+    network to deliver nutrients to the plants, and from the plants.</align>'
 --- !u!1 &1376661224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,6 +1840,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: c666133e9117a4e4891f49583a64ea04, type: 2}
     - target: {fileID: 784495279520846897, guid: 1f6293812050da54baf7bf136a802355, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 784495279520846897, guid: 1f6293812050da54baf7bf136a802355, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
@@ -2017,7 +2089,7 @@ Transform:
   m_GameObject: {fileID: 2075776042}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1711428, y: 0.3977312, z: -10}
+  m_LocalPosition: {x: -3.7, y: -1.2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2164,11 +2236,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3111686932276591355, guid: f4ea082f33d25554683eb5e5338109cf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1711428
+      value: -3.7
       objectReference: {fileID: 0}
     - target: {fileID: 3111686932276591355, guid: f4ea082f33d25554683eb5e5338109cf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3977312
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3111686932276591355, guid: f4ea082f33d25554683eb5e5338109cf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2258,63 +2330,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1528348364}
   m_SourcePrefab: {fileID: 100100000, guid: f4ea082f33d25554683eb5e5338109cf, type: 3}
---- !u!1001 &5303385074298742080
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2820826532602147336, guid: b800794af0062b6499ff0363750b41e2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820826532602147336, guid: b800794af0062b6499ff0363750b41e2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.94
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820826532602147336, guid: b800794af0062b6499ff0363750b41e2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820826532602147336, guid: b800794af0062b6499ff0363750b41e2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820826532602147336, guid: b800794af0062b6499ff0363750b41e2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820826532602147336, guid: b800794af0062b6499ff0363750b41e2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820826532602147336, guid: b800794af0062b6499ff0363750b41e2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820826532602147336, guid: b800794af0062b6499ff0363750b41e2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820826532602147336, guid: b800794af0062b6499ff0363750b41e2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820826532602147336, guid: b800794af0062b6499ff0363750b41e2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6958957352946710190, guid: b800794af0062b6499ff0363750b41e2, type: 3}
-      propertyPath: m_Name
-      value: PlantNutrients
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b800794af0062b6499ff0363750b41e2, type: 3}
 --- !u!1001 &7325412301742893027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2325,11 +2340,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 225214611534898822, guid: 98a14824875ad384ab1fc7776809353f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.197
+      value: -1.63
       objectReference: {fileID: 0}
     - target: {fileID: 225214611534898822, guid: 98a14824875ad384ab1fc7776809353f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.576
+      value: -1.2
       objectReference: {fileID: 0}
     - target: {fileID: 225214611534898822, guid: 98a14824875ad384ab1fc7776809353f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2382,7 +2397,6 @@ SceneRoots:
   - {fileID: 7325412301742893027}
   - {fileID: 2075776045}
   - {fileID: 1590452789}
-  - {fileID: 5303385074298742080}
   - {fileID: 124807522}
   - {fileID: 967984806}
   - {fileID: 338756759}

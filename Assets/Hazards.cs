@@ -16,8 +16,13 @@ public class Hazards : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent(out Player_Model model))
+        if (other.TryGetComponent(out Player_Controller controller) && other.TryGetComponent(out Player_Model model))
         {
+            if (UIPopupManager.Instance.OpenUI(nameof(ZoneType.PollutionHazard)))
+            {
+                controller.SwitchtoUI();
+            }
+         
             model.moveSpeed /= 2;
             Music.OnMusicAudioEvent?.Invoke("Panic");
             PlayerAudio.OnPlayerAudioEvent?.Invoke("scared");
