@@ -46,7 +46,6 @@ public class Hazards : MonoBehaviour
         isInDanger = true;
         while (isInDanger)
         {
-            PlayerAudio.OnPlayerAudioEvent?.Invoke("hurt");
             controller.HurtCycle();
             yield return new WaitForSeconds(2f);
         }
