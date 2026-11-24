@@ -31,6 +31,7 @@ namespace Audio.Scripts
             if (clipName == "footsteps")
             {
                 FootstepSource.PlayOneShot(selectedClip);
+                return;
             }
             Audio.PlayOneShot(selectedClip);
         }
