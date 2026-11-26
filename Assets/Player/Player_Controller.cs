@@ -11,9 +11,10 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] Player_Model playerModel;
     [SerializeField] Player_View playerView;
 
-    public Action<bool> PickupAction;
-    public Action<Vector2> MoveAction;
-
+    private Action<bool> PickupAction;
+    private Action<Vector2> MoveActionPerformed;
+    private Action<Vector2> _moveActionCanceled;
+    public static Action _inHazardZone;
 
     private void Awake()
     {
@@ -31,25 +32,35 @@ public class Player_Controller : MonoBehaviour
 
         if (playerView != null)
         {
-            MoveAction += playerView.Move;
+            _moveActionCanceled += playerView.StopMove;
+            MoveActionPerformed += playerView.Move;
             PickupAction += playerView.Pickup;
         }
     }
 
-   
-
+    public void HurtCycle()
+    {
+        playerView.HurtAnim();
+    }
 
     private void Pickup(InputAction.CallbackContext obj)
     {
+        if (!obj.performed) return;
         if (!playerModel.isHolding)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.up, 1f, playerModel.layerMask);
+            Vector2 rayDirection = playerModel.lastMoveValue != Vector2.zero
+                ? playerModel.lastMoveValue
+                : Vector2.zero;
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDirection, 1f, playerModel.layerMask);
             if (hit.collider != null)
             {
+                Debug.Log(playerModel.moveValue);
                 playerModel.holdObject = hit.collider.gameObject;
-               if (UIPopupManager.Instance.OpenUI(playerModel.holdObject.name)) SwitchtoUI();
+
+                if (UIPopupManager.Instance.OpenUI(playerModel.holdObject.name)) SwitchtoUI();
                 playerModel.isHolding = true;
-                
+
                 PickupAction?.Invoke(playerModel.isHolding);
             }
         }
@@ -60,19 +71,20 @@ public class Player_Controller : MonoBehaviour
                 PickupAction?.Invoke(playerModel.isHolding = false);
                 PlayerAudio.OnPlayerAudioEvent?.Invoke("happy");
                 playerModel.holdObject.SetActive(false);
-                NutrientsPool.instance.spawnNutrient(playerModel.currentZone.transform.position, playerModel.holdObject.name);
+                NutrientsPool.instance.SpawnNutrient(playerModel.currentZone.transform.position,
+                    playerModel.holdObject.name);
                 playerModel.holdObject = null;
-                
             }
         }
     }
 
-    public  void SwitchtoUI()
+    public void SwitchtoUI()
     {
         Debug.Log("Switch to UI");
-       _controls.Player.Disable();
-       _controls.UI.Enable();
+        _controls.Player.Disable();
+        _controls.UI.Enable();
     }
+
     private void CloseUI(InputAction.CallbackContext obj)
     {
         UIPopupManager.Instance.CloseUi();
@@ -87,8 +99,23 @@ public class Player_Controller : MonoBehaviour
 
     public void MovementInput(InputAction.CallbackContext obj)
     {
-        playerModel.moveValue = obj.ReadValue<Vector2>();
-        MoveAction?.Invoke(playerModel.moveValue);
+        if (obj.performed)
+        {
+            Vector2 input = obj.ReadValue<Vector2>();
+            playerModel.moveValue = input;
+            if (input != Vector2.zero)
+            {
+                playerModel.lastMoveValue = input;
+            }
+
+            MoveActionPerformed?.Invoke(playerModel.moveValue);
+        }
+
+        if (obj.canceled)
+        {
+            playerModel.moveValue = Vector2.zero;
+            _moveActionCanceled?.Invoke(playerModel.lastMoveValue);
+        }
     }
 
 
@@ -102,7 +129,7 @@ public class Player_Controller : MonoBehaviour
 
         if (playerView != null)
         {
-            MoveAction -= playerView.Move;
+            MoveActionPerformed -= playerView.Move;
             PickupAction -= playerView.Pickup;
         }
     }

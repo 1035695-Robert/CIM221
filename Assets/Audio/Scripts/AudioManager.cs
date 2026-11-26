@@ -3,8 +3,9 @@ using UnityEngine;
 
 public abstract class AudioManager : MonoBehaviour
 {
+    
     public AudioSource Audio;
-    [SerializeField] private AudioClip[] _audioClips;
+    [SerializeField] protected AudioClip[] _audioClips;
 
     protected virtual void Awake()
     {
@@ -16,6 +17,7 @@ public abstract class AudioManager : MonoBehaviour
     public virtual void PlayAudio(string clipName)
     {
         AudioClip target = Array.Find(_audioClips, sound => sound.name == clipName);
+        if (target == null) return;
         Audio.PlayOneShot(target);
     }
 

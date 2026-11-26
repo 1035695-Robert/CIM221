@@ -1,11 +1,13 @@
 using System;
+using Audio.Scripts;
 using UnityEngine;
 
 public enum ZoneType
 {
     None,
     RootZone,
-    FungalZone
+    FungalZone,
+    PollutionHazard
 }
 
 
@@ -13,6 +15,7 @@ public class Zone : MonoBehaviour
 {
     public static Func<GameObject, bool> onDelivery;
     [SerializeField] public ZoneType zoneType;
+
 
     private void OnEnable()
     {
@@ -46,6 +49,10 @@ public class Zone : MonoBehaviour
                 if (zoneType == ZoneType.FungalZone)
                 {
                     Debug.Log("Host Nutrient");
+                   
+                    Hazards.OnHazardClear?.Invoke("pollution");
+                    Sfx.OnSfxAudioEvent?.Invoke("clearHazard");
+
                     return true;
                 }
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1385193937107299226}
   - component: {fileID: 8436932887278267952}
   - component: {fileID: 5116082924317969390}
+  - component: {fileID: -6161543525513188331}
   m_Layer: 3
   m_Name: SoilNutrients
   m_TagString: Untagged
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: -891134295
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 1095761544, guid: 31fa099d09c5cfe468e06c9b83869981, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,7 +127,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0.21133333}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.28866667}
+    pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -147,4 +148,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf2feddc4ef909e429844b9587a43d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nutrientsType: 0
+  type: 0
+--- !u!95 &-6161543525513188331
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9165763677794165103}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 450db49df51ee5442a98a1c5c2956d6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
