@@ -176,8 +176,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c017e9389cbf63940ae01856c67c7461
-      internalID: -679607471
+      spriteID: 02799d4d9d166c94c825b8be6248951c
+      internalID: 1361381811
       vertices: []
       indices: 
       edges: []
@@ -198,8 +198,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3fabedda0a855da47b753026d1e82bb0
-      internalID: 1800593425
+      spriteID: ca0300f6f5466884caff059b360ab351
+      internalID: -420188596
       vertices: []
       indices: 
       edges: []
@@ -220,8 +220,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2eed9da116a64a4893143254ca32bf7
-      internalID: 1178381657
+      spriteID: 7adf167139df6ef49a3f253dc0997e40
+      internalID: -1578126879
       vertices: []
       indices: 
       edges: []
@@ -242,8 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb4c8d93572c3354a870ca4d0835e8b2
-      internalID: -1729567564
+      spriteID: b274afa6abcfff344b8453ab095ff90d
+      internalID: 1600950257
       vertices: []
       indices: 
       edges: []
@@ -264,8 +264,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d24f729130ab60646ad02866e271f901
-      internalID: -1423020614
+      spriteID: d67661f002cd4984f8b4e9f4d601d8d2
+      internalID: 1116685375
       vertices: []
       indices: 
       edges: []
@@ -274,7 +274,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5b1cdcbd31d8dc54f8e99164b41844ad
+    spriteID: 31ec26df1d786e24f8858e93a3ad98ef
     internalID: 0
     vertices: []
     indices: 
@@ -285,11 +285,11 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       walltiles_0: -6074187079133600768
-      walltiles_1: -679607471
-      walltiles_2: 1800593425
-      walltiles_3: 1178381657
-      walltiles_4: -1729567564
-      walltiles_5: -1423020614
+      walltiles_1: 1361381811
+      walltiles_2: -420188596
+      walltiles_3: -1578126879
+      walltiles_4: 1600950257
+      walltiles_5: 1116685375
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

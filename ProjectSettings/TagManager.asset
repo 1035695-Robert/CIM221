@@ -44,6 +44,12 @@ TagManager:
   - name: Nutrients
     uniqueID: 3403833001
     locked: 0
+  - name: Floor
+    uniqueID: 1026476543
+    locked: 0
+  - name: WallBehind
+    uniqueID: 1676306431
+    locked: 0
   - name: player
     uniqueID: 1161591353
     locked: 0
