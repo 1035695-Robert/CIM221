@@ -76,6 +76,9 @@ public class Player_Controller : MonoBehaviour
                 playerModel.holdObject = null;
             }
         }
+Debug.Log("ishold" + playerModel.isHolding);
+        string song = playerModel.isHolding ? "Base" : "Tense";
+        Music.OnMusicAudioEvent?.Invoke(song);
     }
 
     public void SwitchtoUI()
@@ -95,7 +98,7 @@ public class Player_Controller : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + playerModel.moveValue * (playerModel.moveSpeed * Time.fixedDeltaTime));
-    }
+    } 
 
     public void MovementInput(InputAction.CallbackContext obj)
     {
