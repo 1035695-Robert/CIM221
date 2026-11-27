@@ -76,6 +76,10 @@ public class Player_Controller : MonoBehaviour
                 playerModel.holdObject = null;
             }
         }
+
+        Debug.Log(playerModel.isHolding +" isHolding");
+        string song = playerModel.isHolding ? "Tense" : "Base";
+        Music.OnMusicAudioEvent?.Invoke(song);
     }
 
     public void SwitchtoUI()
