@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public abstract class AudioManager : MonoBehaviour
+public  class AudioManager : MonoBehaviour
 {
     
     public AudioSource Audio;
@@ -12,7 +12,10 @@ public abstract class AudioManager : MonoBehaviour
         if (Audio == null) GetComponent<AudioSource>();
     }
 
-    protected abstract void OnEnable();
+    protected virtual void OnEnable()
+    {
+        
+    }
 
     public virtual void PlayAudio(string clipName)
     {
@@ -21,5 +24,8 @@ public abstract class AudioManager : MonoBehaviour
         Audio.PlayOneShot(target);
     }
 
-    protected abstract void OnDisable();
+    protected virtual void OnDisable()
+    {
+        
+    }
 }

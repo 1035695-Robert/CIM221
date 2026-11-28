@@ -32,7 +32,7 @@ namespace Audio.Scripts
             {
                 case "happy": return happy[UnityEngine.Random.Range(0, happy.Length)];
 
-                case "sad": return sad[UnityEngine.Random.Range(0, sad.Length)];
+                case "sad": return sad[UnityEngine.Random.Range(0, sad.Length)]; 
 
                 case "hurt": return hurt[UnityEngine.Random.Range(0, hurt.Length)];
 
