@@ -743,7 +743,7 @@ Transform:
   m_GameObject: {fileID: 216538008}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 46.2, y: -4.58, z: 0.017252447}
+  m_LocalPosition: {x: 48.98, y: -4.08, z: 0.017252447}
   m_LocalScale: {x: 6.5, y: 6.5, z: 1.625}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1230,7 +1230,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1602,11 +1602,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   title: Fungal Network
-  description: "The unsung hero of an ecosystem, it lives in the soil with threads
-    intertwining with the roots, which allow plants to transfer water and minerals,
-    which is known as the mycorrhizal network... mycorrhiza network\n [or however
-    you say it]\r\n\n<align=\"center\">This is the main hub where you will obtain
-    nutrients in order to deliver them.</align>"
+  description: 'The unsung hero of an ecosystem, it lives in the soil, composed of
+    hyphae filaments that intertwine with the roots, allowing plants to transfer
+    water and minerals, which is known as the mycorrhizal network.
+
+
+    <align="center">This
+    is the main hub where you will obtain soil nutrients in order to deliver them
+    to Plant Roots. </align>
+
+'
 --- !u!4 &580478983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3111686932276591355, guid: f4ea082f33d25554683eb5e5338109cf, type: 3}
