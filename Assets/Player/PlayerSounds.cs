@@ -5,10 +5,10 @@ public class PlayerSounds : MonoBehaviour
 {
     public void Steps()
     {
-        Sfx.OnSfxAudioEvent("footsteps");
+        Sfx.OnSfxAudioEvent?.Invoke("footsteps");
     }
     public void Hurt()
     {
-        PlayerAudio.OnPlayerAudioEvent("hurt");    
+        PlayerAudio.OnPlayerAudioEvent?.Invoke("hurt");    
     }
 }
