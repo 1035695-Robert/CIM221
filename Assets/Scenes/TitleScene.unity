@@ -631,7 +631,7 @@ MonoBehaviour:
   HazardSource: {fileID: 1175893949}
   FootstepSource: {fileID: 1175893950}
   Pickup:
-  - {fileID: 8300000, guid: 1a2e16f02faede94ebcf3568ddda5a43, type: 3}
+  - {fileID: 8300000, guid: 23f4433d835077048bffce232ad5c2a7, type: 3}
   - {fileID: 8300000, guid: b24b65ef4bf506843b34c71ce0e809ef, type: 3}
   Drop:
   - {fileID: 8300000, guid: 6575830088498174283543c4315b9568, type: 3}
